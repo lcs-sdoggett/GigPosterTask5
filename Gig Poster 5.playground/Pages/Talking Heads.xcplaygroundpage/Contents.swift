@@ -44,6 +44,49 @@ let brightYellow = Color(hue: 46, saturation: 71, brightness: 98, alpha: 100)
 
 // Begin your solution here...
 
+canvas.drawShapesWithBorders = false
+canvas.fillColor = deepOrange
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: canvas.width, height: canvas.height)
+
+for x in 0...8 {
+    
+    for y in 0...8 {
+        
+        // Decide if the triangle is going to be yellw or white
+        if x - y >= 0 {
+            canvas.fillColor = brightYellow
+        } else {
+            canvas.fillColor = offWhite
+        }
+        
+        // Add points for a triangle into an array
+        var triangleVertices: [Point] = []
+        triangleVertices.append(Point(x: Double(x) * 44.44, y: Double(y) * 44.44 + 200))
+        triangleVertices.append(Point(x: Double(x) * 44.44 + 44.44, y: Double(y) * 44.44 + 200))
+        triangleVertices.append(Point(x: Double(x) * 44.44 + 44.44, y: Double(y) * 44.44 + 200 + 44.44))
+
+        // Draw the shape based on the points in the array
+        canvas.drawCustomShape(with: triangleVertices)
+    }
+
+}
+
+canvas.textColor = offWhite
+canvas.drawText(message: "talking heads" , at: Point(x: 25, y: 135), size: 40, kerning: 0)
+
+canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 20, y: 30), size: 8, kerning: 0)
+
+canvas.drawText(message: "september 12, 13, 14 1975", at: Point(x: 20, y: 15), size: 8, kerning: 0)
+
+canvas.drawText(message: "at cbgb and omfug", at: Point(x: 145, y: 30), size: 8, kerning: 0)
+
+canvas.drawText(message: "315 bowery, new york city", at: Point(x: 145, y: 15), size: 8, kerning: 0)
+
+canvas.drawText(message: "also appearing:", at: Point(x: 270, y: 30), size: 8, kerning: 0)
+
+canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 270, y: 15), size: 8, kerning: 0)
+
+
 
 /*:
  ## Use Source Control
